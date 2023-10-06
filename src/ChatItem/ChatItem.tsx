@@ -17,6 +17,7 @@ const ChatItem: React.FC<IChatItemProps> = ({
   statusColorType = 'badge',
   lazyLoadingImage = undefined,
   onAvatarError = () => void 0,
+  customAvatar,
   ...props
 }) => {
   const [onHoverTool, setOnHoverTool] = useState(false)
@@ -79,6 +80,10 @@ const ChatItem: React.FC<IChatItemProps> = ({
             key={'avatar'}
             className={classNames('rce-citem-avatar', { 'rce-citem-status-encircle': statusColorType === 'encircle' })}
           >
+            {
+            customAvatar ?
+            customAvatar
+            :
             <Avatar
               src={props.avatar}
               alt={props.alt}
@@ -109,6 +114,8 @@ const ChatItem: React.FC<IChatItemProps> = ({
               lazyLoadingImage={lazyLoadingImage}
               type={classNames('circle', { 'flexible': avatarFlexible })}
             />
+          }
+
           </div>,
           <div key={'rce-citem-body'} className='rce-citem-body'>
             <div className='rce-citem-body--top'>

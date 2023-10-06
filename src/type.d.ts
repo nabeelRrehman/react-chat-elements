@@ -61,6 +61,7 @@ export interface IChatItemProps {
   onDragComponent?: any
   letterItem?: ILetterItem
   customStatusComponents?: React.ElementType<any>[]
+  customAvatar?: React.ReactNode
 }
 
 /**
