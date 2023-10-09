@@ -80,42 +80,40 @@ const ChatItem: React.FC<IChatItemProps> = ({
             key={'avatar'}
             className={classNames('rce-citem-avatar', { 'rce-citem-status-encircle': statusColorType === 'encircle' })}
           >
-            {
-            customAvatar ?
-            customAvatar
-            :
-            <Avatar
-              src={props.avatar}
-              alt={props.alt}
-              className={statusColorType === 'encircle' ? 'rce-citem-avatar-encircle-status' : ''}
-              size='large'
-              letterItem={props.letterItem}
-              sideElement={
-                props.statusColor ? (
-                  <span
-                    className='rce-citem-status'
-                    style={
-                      statusColorType === 'encircle'
-                        ? {
-                            border: `solid 2px ${props.statusColor}`,
-                          }
-                        : {
-                            backgroundColor: props.statusColor,
-                          }
-                    }
-                  >
-                    {props.statusText}
-                  </span>
-                ) : (
-                  <></>
-                )
-              }
-              onError={onAvatarError}
-              lazyLoadingImage={lazyLoadingImage}
-              type={classNames('circle', { 'flexible': avatarFlexible })}
-            />
-          }
-
+            {customAvatar ? (
+              customAvatar
+            ) : (
+              <Avatar
+                src={props.avatar}
+                alt={props.alt}
+                className={statusColorType === 'encircle' ? 'rce-citem-avatar-encircle-status' : ''}
+                size='large'
+                letterItem={props.letterItem}
+                sideElement={
+                  props.statusColor ? (
+                    <span
+                      className='rce-citem-status'
+                      style={
+                        statusColorType === 'encircle'
+                          ? {
+                              border: `solid 2px ${props.statusColor}`,
+                            }
+                          : {
+                              backgroundColor: props.statusColor,
+                            }
+                      }
+                    >
+                      {props.statusText}
+                    </span>
+                  ) : (
+                    <></>
+                  )
+                }
+                onError={onAvatarError}
+                lazyLoadingImage={lazyLoadingImage}
+                type={classNames('circle', { 'flexible': avatarFlexible })}
+              />
+            )}
           </div>,
           <div key={'rce-citem-body'} className='rce-citem-body'>
             <div className='rce-citem-body--top'>

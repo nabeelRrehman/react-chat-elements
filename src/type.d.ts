@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 /**
  * IChatItemProps Interface
@@ -61,7 +61,7 @@ export interface IChatItemProps {
   onDragComponent?: any
   letterItem?: ILetterItem
   customStatusComponents?: React.ElementType<any>[]
-  customAvatar?: React.ReactNode
+  customAvatar?: ReactNode
 }
 
 /**
